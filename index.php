@@ -49,7 +49,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -67,31 +67,29 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="?page=peminjaman" >
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Peminjaman</span>
                 </a>
             </li>
+
+
           <?php if($_SESSION['user']['level']!= 'peminjam') : ?>
        <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="?page=kategori">
                     <i class="fas fa-fw fa-book"></i>
-                    <span>ulasan</span>
+                    <span>Kategori</span>
                 </a>
             </li>
             <?php endif; ?>
              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="?page=buku">
                     <i class="fas fa-fw fa-book-open"></i>
                     <span>Buku</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="?page=logout">
                     <i class="fas fa-fw fa-star"></i>
                     <span>logout</span>
                 
@@ -101,15 +99,10 @@
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                
             </div>
 
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
+            
 
         </ul>
         <!-- End of Sidebar -->
@@ -324,16 +317,35 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
+               <!-- Begin Page Content -->
+                  <div class="container-fluid">
+                       
+               <!-- Page Heading (hanya tampil di dashboard home) -->
+                    <?php 
+                    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+                    if ($page === 'home') : ?>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
+                    <?php endif; ?>    
+        <div>
+            <h2 class="fw-bold mb-0">Kategori Buku</h2>
+                      
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                         <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
+                   </a>
+              </div>
 
+                        <!-- Card -->
+                         <div class="card shadow mb-4">
+                                <div class="card-body">
+                                       <!-- Isi Konten Di Sini -->
+                                       </div>
+                                  </div>
+
+                              </div>
+                            <!-- End Page Content -->
                     <!-- Content Row -->
                     <div class="row">
 
@@ -366,6 +378,7 @@
 
             </div>
             <!-- End of Main Content -->
+             
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">

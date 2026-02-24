@@ -1,1 +1,1 @@
-<h1  cllas="m4-4>404 not foud</h1>
+<h1  class="mt-4">Halaman Tidak Ditemukan</h1>

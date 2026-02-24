@@ -96,18 +96,24 @@
                         <div class="card-body">
                             <table class="table table-brdered">
                                 <tr>
-                                    <td width="150"><strong>Nama</strong></td>
-                                    <td width="1">:</td>
-                                    <td width="200"><?=$_SESSION['user']['nama';?></td>
-                                    </td>
-                                       <tr>
-                                         <td width="150"><strong>Level user</strong></td>
-                                         <td width="1">:</td>
-                                         <td><?=$_SESSION['user']['level']; ?></td>
-                                     </td>
-                                         <tr>
-                                 <td width="150"><td width="150"><strong>Tanggan login</stron></td>
-                                  <td width="1">:</td>
-                                   <td><?= date('d-m-y'); ?></td>
-<
+                                   <table class="table table-bordered">
+                                   <tr>
+                              <td width="200"><strong>Nama</strong></td>
+                               <td width="20">:</td>
+                              <td><?= $_SESSION['user']['nama']; ?></td>
+                             </tr>
+                             <tr>
+                          <td><strong>Level user</strong></td>
+                            <td>:</td>
+                             <td><?= $_SESSION['user']['level']; ?></td>
+                                </tr>
+                            <tr>
+                                <td><strong>Tanggal login</strong></td>
+                                 <td>:</td>
+                                 <td><?= date('d-m-y'); ?></td>
+                              </tr>
+                            </table>
+
+                            </div>
+                        </div>
 
